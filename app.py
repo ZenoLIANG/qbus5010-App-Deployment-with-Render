@@ -6,8 +6,6 @@ import pandas as pd
 from dash.dependencies import Input, Output, State
 import datetime
 
-server = app.server
-
 # 读取随机生成的交易数据（已保存的CSV文件）
 commbank_df = pd.read_csv('commbank_transactions.csv')
 anz_df = pd.read_csv('anz_transactions.csv')
@@ -71,6 +69,8 @@ def calculate_summary(df):
 
 # 创建Dashboard应用
 app = dash.Dash(__name__)
+
+server = app.server
 
 # 布局设计
 app.layout = html.Div(children=[

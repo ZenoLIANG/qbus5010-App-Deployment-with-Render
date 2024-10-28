@@ -203,7 +203,7 @@ def update_dashboard(selected_bank, start_date, end_date, n_clicks, selected_cat
         go.Bar(name='Expense', x=filtered_transactions['Transaction Time'], 
                y=abs(filtered_transactions[filtered_transactions['Category'] == 'expense']['Amount']))
     ])
-    weekly_chart.update_layout(title='Weekly Income & Expense')
+    weekly_chart.update_layout(title='Income & Expense of selected period')
 
     # 计算所选日期范围的长度（天数），并根据每7天预算等比例调整预算柱
     date_range_days = (pd.to_datetime(end_date) - pd.to_datetime(start_date)).days + 1

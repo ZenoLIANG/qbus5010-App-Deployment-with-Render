@@ -6,6 +6,8 @@ import pandas as pd
 from dash.dependencies import Input, Output, State
 import datetime
 
+server = app.server
+
 # 读取随机生成的交易数据（已保存的CSV文件）
 commbank_df = pd.read_csv('commbank_transactions.csv')
 anz_df = pd.read_csv('anz_transactions.csv')
